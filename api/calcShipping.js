@@ -58,23 +58,25 @@ export default async function handler(req, res) {
                     street,
                     building_number,
                 },
+                email: 'test@example.com',
+                phone: '500600700',
             },
             parcels,
             service: 'inpost_locker_standard',
         }));
 
+        /* ----------- запрос в ShipX ----------- */
         const shipx = await fetch(
-            `https://api-shipx.pl/v1/organizations/${orgId}/shipments/calculate`, {
+            `https://api-shipx-pl.easypack24.net/v1/organizations/${orgId}/shipments/calculate`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'User-Agent': 'VercelFunction/1.0',
                 },
                 body: JSON.stringify({
                     shipments
                 }),
-            }
+            },
         );
 
         /* ----------- если ShipX вернул 4xx/5xx, отдаём ту же ошибку наружу ----------- */
