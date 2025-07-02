@@ -83,7 +83,9 @@ export default async function handler(req, res) {
         if (!shipx.ok) {
             const body = await shipx.text(); // text/plain или JSON
             console.error('ShipX response', shipx.status, body);
-            return res.status(shipx.status).type('application/json').send(body);
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(shipx.status).send(body);
+
         }
 
         /* ----------- всё ок ----------- */
