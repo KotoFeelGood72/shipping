@@ -95,14 +95,21 @@ export default async function handler(req, res) {
         const offers = await shipx.json();
         console.log(JSON.stringify(offers, null, 2));
 
+        // const shippingCost = offers.reduce(
+        //     (sum, o) => sum + parseFloat(o.calculated_charge_amount || 0),
+        //     0,
+        // );
+
         const shippingCost = offers.reduce(
-            (sum, o) => sum + parseFloat(o.calculated_charge_amount || 0),
-            0,
+            (sum, o) => sum + parseFloat(o.calculated_charge_amount ?? '0'),
+            0
         );
 
         return res.status(200).json({
-            shippingCost
+            shippingCost,
+            offers,
         });
+
     } catch (err) {
         console.error(err);
         return res.status(500).json({
