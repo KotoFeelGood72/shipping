@@ -160,10 +160,10 @@ export default async function handler(req, res) {
             template: 'large'
         }];
 
-        // ─── Получаем ближайший target_point ─────────────────────────────
         const pointsRes = await fetch(
-            `https://api-shipx-pl.easypack24.net/v1/points?city=${encodeURIComponent(city)}&postcode=${encodeURIComponent(postcode)}`
+            `https://api-shipx-pl.easypack24.net/v1/points?postcode=${encodeURIComponent(postcode)}`
         );
+
 
         if (!pointsRes.ok) throw new Error('Failed to fetch InPost points');
 
