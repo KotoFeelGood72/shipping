@@ -62,7 +62,9 @@ export default async function handler(req, res) {
                 phone: '500600700',
             },
             parcels,
-            
+            custom_attributes: {
+                target_point: 'WAW71N', // <--- ID точки выдачи InPost
+            },
             service: 'inpost_locker_standard',
         }));
 
