@@ -58,9 +58,11 @@ export default async function handler(req, res) {
                     street,
                     building_number,
                 },
+                email: 'test@example.com',
+                phone: '500600700',
             },
             parcels,
-            service: 'inpost_courier_standard',
+            service: 'inpost_locker_standard',
         }));
 
         /* ----------- запрос в ShipX ----------- */
