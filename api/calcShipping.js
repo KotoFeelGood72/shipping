@@ -35,8 +35,8 @@ export default async function handler(req, res) {
         address.match(/^(.+?)\s+(\S+)$/) || [];
 
         /* ----------- auth ----------- */
-        const token = process.env.SHIPX_API_TOKEN;
-        const orgId = process.env.SHIPX_ORGANIZATION_ID;
+        const token = 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNjY2NDY2NDksImlhdCI6MTc1MTI4NjY0OSwianRpIjoiNzdjMmNjMmEtYTdiYi00YWZlLWI5MWEtZWYyMmVhMWU1NmFmIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTppS2l4RVVNb0JqbDFUNy12d0U1ZXVBIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiMmFkNzJhZjItZTg0NC00ODQxLTkwNjUtM2FkY2NjY2MyZTNkIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyBhcGk6c2hpcHgiLCJzaWQiOiIyYWQ3MmFmMi1lODQ0LTQ4NDEtOTA2NS0zYWRjY2NjYzJlM2QiLCJhbGxvd2VkX3JlZmVycmVycyI6IiIsInV1aWQiOiJkNzc3OTdiMy1iY2U5LTRkYjctOGEyYi1jNTBkNjY4ODBlNjQiLCJlbWFpbCI6ImluZm9AZnlrLmJhciJ9.m9PINspOAuYeJAyGF9yHi9AqYNHq-EA0CSB3_T7-d0U8LgeRF4R2d32FoNq-rgImgAahZzigRfyuvgWk5vampQRdfjdmxEaA18f8_JNFggNWjHdcIy-xulEyVvnoGHwXoUiCEUbVs8A5FKrSBc7XFuOVE6Rs7jOhI2Bt-Grt3-SMoU52ywAop0IvGzKBqRBbHH_HO3xSt8lKf29QwGLiCu46ryPKCcKGnoYVSqJRCri5GYxbUTfZcsib2EGwfj-pr819x2-qzqUwxpSI7FBGoOxX1hEMpigpzNpDJXrJ8fqb5pwIV_rGEpBPMAAOcKk0IDvoqLj6Z0wP7YjlewhH3w';
+        const orgId = '88982';
         if (!token || !orgId)
             throw new Error('Missing SHIPX_API_TOKEN or SHIPX_ORGANIZATION_ID');
 
