@@ -65,7 +65,7 @@ export default async function handler(req, res) {
             custom_attributes: {
                 target_point: 'WAW123', // <--- ID точки выдачи InPost
             },
-            service: 'inpost_locker_standard',
+            service: 'inpost_courier_standard',
         }));
 
         /* ----------- запрос в ShipX ----------- */
