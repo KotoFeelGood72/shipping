@@ -63,7 +63,7 @@ export default async function handler(req, res) {
             },
             parcels,
             custom_attributes: {
-                target_point: 'WAW71N', // <--- ID точки выдачи InPost
+                target_point: 'WAW71N',
             },
             service: 'inpost_locker_standard',
         }));
@@ -93,6 +93,8 @@ export default async function handler(req, res) {
 
         /* ----------- всё ок ----------- */
         const offers = await shipx.json();
+        console.log(JSON.stringify(offers, null, 2));
+
         const shippingCost = offers.reduce(
             (sum, o) => sum + parseFloat(o.calculated_charge_amount || 0),
             0,
