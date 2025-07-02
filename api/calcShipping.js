@@ -82,8 +82,9 @@ export default async function handler(req, res) {
             },
             parcels,
             custom_attributes: {
-                target_point,
+                target_point: req.body.target_point || foundPoint?.name,
             },
+
             service: 'inpost_locker_standard',
         }));
 
